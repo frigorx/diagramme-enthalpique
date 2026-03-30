@@ -152,7 +152,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
   <div class="tab on" onclick="showTab(0)">&#128202; Diagramme</div>
   <div class="tab" onclick="showTab(1)">&#9889; Cycles avanc&eacute;s</div>
   <div class="tab" onclick="showTab(2)">&#127891; Exercice</div>
-  <div class="tab" onclick="showTab(3)">&#127777; SR / SC &amp; Mano</div>
+  <div class="tab" onclick="showTab(3)">&#127777; SC / SR &amp; Mano</div>
   <div class="tab" onclick="showTab(4)">&#128260; Convertisseur</div>
   <div class="tab" onclick="showTab(5)">&#128257; Comparateur</div>
   <div class="tab" onclick="showTab(6)">&#128214; M&eacute;thode</div>
@@ -180,11 +180,11 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
   <div class="relabs"><div><div class="ra-h">PO rel</div><div class="ra-v" id="ra-por">&mdash;</div></div><div><div class="ra-h">PO abs</div><div class="ra-v" id="ra-poa">&mdash;</div></div><div><div class="ra-h">PK rel</div><div class="ra-v" id="ra-pkr">&mdash;</div></div><div><div class="ra-h">PK abs</div><div class="ra-v" id="ra-pka">&mdash;</div></div></div>
   <div class="sec-t tp">&#127777; Temp&eacute;ratures (&deg;C)</div>
   <div class="form-grid">
-    <div class="fg"><label>T&deg; sortie &eacute;vap <span class="tag" style="background:var(--turq)">Bulbe</span></label><input type="number" id="in-tbulbe" step="0.1" value="0" inputmode="decimal"><div class="hint">SR utile = Tbulbe &minus; TO</div></div>
-    <div class="fg"><label>T&deg; aspiration comp.</label><input type="number" id="in-tasp" step="0.1" value="5" inputmode="decimal"><div class="hint">SR totale = Tasp &minus; TO</div></div>
+    <div class="fg"><label>T&deg; sortie &eacute;vap <span class="tag" style="background:var(--turq)">Bulbe</span></label><input type="number" id="in-tbulbe" step="0.1" value="0" inputmode="decimal"><div class="hint">SC utile = Tbulbe &minus; TO</div></div>
+    <div class="fg"><label>T&deg; aspiration comp.</label><input type="number" id="in-tasp" step="0.1" value="5" inputmode="decimal"><div class="hint">SC totale = Tasp &minus; TO</div></div>
     <div class="fg"><label>T&deg; refoulement</label><input type="number" id="in-tref" step="0.1" value="65" inputmode="decimal"></div>
-    <div class="fg"><label>T&deg; sortie condenseur</label><input type="number" id="in-tsortcond" step="0.1" value="32" inputmode="decimal"><div class="hint">SC = TK &minus; Tsortcond</div></div>
-    <div class="fg"><label>T&deg; entr&eacute;e d&eacute;tendeur</label><input type="number" id="in-tentdet" step="0.1" value="30" inputmode="decimal"><div class="hint">SC ligne si &ne; sort.cond</div></div>
+    <div class="fg"><label>T&deg; sortie condenseur</label><input type="number" id="in-tsortcond" step="0.1" value="32" inputmode="decimal"><div class="hint">SR = TK &minus; Tsortcond</div></div>
+    <div class="fg"><label>T&deg; entr&eacute;e d&eacute;tendeur</label><input type="number" id="in-tentdet" step="0.1" value="30" inputmode="decimal"><div class="hint">SR ligne si &ne; sort.cond</div></div>
   </div>
   <div class="sec-t pw">&#9889; Puissances (optionnel)</div>
   <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr">
@@ -209,7 +209,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
 <div style="font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--navy);font-weight:700;margin:6px 0 2px">&#9889; TK &middot; TO &middot; PK &middot; PO</div>
 <div class="kpi-row"><div class="kpi k-to"><div class="kv" id="k-to">&mdash;</div><div class="kl">TO (&deg;C)</div></div><div class="kpi k-tk"><div class="kv" id="k-tk">&mdash;</div><div class="kl">TK (&deg;C)</div></div><div class="kpi k-po"><div class="kv" id="k-po">&mdash;</div><div class="kl">PO abs</div></div><div class="kpi k-pk"><div class="kv" id="k-pk">&mdash;</div><div class="kl">PK abs</div></div></div>
 <div style="font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--navy);font-weight:700;margin:6px 0 2px">&#128293; Surchauffe &middot; Sous-refroidissement</div>
-<div class="kpi-row"><div class="kpi" id="kpi-sru"><div class="kv" id="k-sru">&mdash;</div><div class="kl">SR utile (K)</div></div><div class="kpi" id="kpi-srt"><div class="kv" id="k-srt">&mdash;</div><div class="kl">SR totale (K)</div></div><div class="kpi" id="kpi-srl"><div class="kv" id="k-srl">&mdash;</div><div class="kl">SR ligne (K)</div></div><div class="kpi" id="kpi-sc"><div class="kv" id="k-sc">&mdash;</div><div class="kl">SC (K)</div></div></div>
+<div class="kpi-row"><div class="kpi" id="kpi-sru"><div class="kv" id="k-sru">&mdash;</div><div class="kl">SC utile (K)</div></div><div class="kpi" id="kpi-srt"><div class="kv" id="k-srt">&mdash;</div><div class="kl">SC totale (K)</div></div><div class="kpi" id="kpi-srl"><div class="kv" id="k-srl">&mdash;</div><div class="kl">SC ligne (K)</div></div><div class="kpi" id="kpi-sc"><div class="kv" id="k-sc">&mdash;</div><div class="kl">SR (K)</div></div></div>
 <div style="font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--navy);font-weight:700;margin:6px 0 2px">&#128200; Performances massiques (kJ/kg)</div>
 <div class="kpi-row"><div class="kpi"><div class="kv" id="k-cop">&mdash;</div><div class="kl">COP froid</div></div><div class="kpi"><div class="kv" id="k-qe">&mdash;</div><div class="kl">q &eacute;vap</div></div><div class="kpi"><div class="kv" id="k-wc">&mdash;</div><div class="kl">w comp</div></div><div class="kpi"><div class="kv" id="k-qc">&mdash;</div><div class="kl">q cond</div></div><div class="kpi"><div class="kv" id="k-rc">&mdash;</div><div class="kl">RC</div></div></div>
 <div id="power-row" style="display:none">
@@ -218,7 +218,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
 </div>
 
 <div class="svg-wrap" id="svg-wrap"><svg id="plot" viewBox="0 0 1100 700" preserveAspectRatio="xMidYMid meet"></svg><div class="ch-tip" id="tooltip"></div></div>
-<div class="legend"><span><div class="dot" style="background:#0f2d52"></div>Cloche</span><span><div class="dot" style="background:#e74c3c"></div>Cycle</span><span><div class="dot" style="background:#27ae60;height:0;border-top:2px dashed #27ae60"></div>Id&eacute;al</span><span><div class="dot" style="background:#e8914a;height:0;border-top:2px dashed #e8914a"></div>Iso.</span><span><div class="dot" style="background:#2aafaf;height:0;border-top:2px dashed #2aafaf"></div>Isobares</span><span style="color:#27ae60;font-weight:700">&#9608;SR utile</span><span style="color:#e8914a;font-weight:700">&#9608;SR ligne</span><span style="color:#2563eb;font-weight:700">&#9608;SC</span></div>
+<div class="legend"><span><div class="dot" style="background:#0f2d52"></div>Cloche</span><span><div class="dot" style="background:#e74c3c"></div>Cycle</span><span><div class="dot" style="background:#27ae60;height:0;border-top:2px dashed #27ae60"></div>Id&eacute;al</span><span><div class="dot" style="background:#e8914a;height:0;border-top:2px dashed #e8914a"></div>Iso.</span><span><div class="dot" style="background:#2aafaf;height:0;border-top:2px dashed #2aafaf"></div>Isobares</span><span style="color:#27ae60;font-weight:700">&#9608;SC utile</span><span style="color:#e8914a;font-weight:700">&#9608;SC ligne</span><span style="color:#2563eb;font-weight:700">&#9608;SR</span></div>
 </div>
 
 <!-- ====================== TAB 1 : CYCLES AVANCES ====================== -->
@@ -246,7 +246,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
       <div class="fg"><label>T&deg; aspiration HT</label><input type="number" id="bi-tasp-ht" step="0.1" value="5" inputmode="decimal"></div>
     </div>
     <div class="form-grid" style="grid-template-columns:1fr 1fr">
-      <div class="fg"><label>SC au condenseur (K)</label><input type="number" id="bi-sc" step="0.5" value="5" inputmode="decimal"></div>
+      <div class="fg"><label>SR au condenseur (K)</label><input type="number" id="bi-sc" step="0.5" value="5" inputmode="decimal"></div>
       <div class="fg"><label>D&eacute;bit massique BT (kg/s)</label><input type="number" id="bi-qm" step="0.001" value="" placeholder="optionnel" inputmode="decimal"></div>
     </div>
     <div class="btn-row"><button class="btn btn-o btn-blk" onclick="tracerBiStage()">&#128208; Tracer le cycle bi-&eacute;tag&eacute;</button></div>
@@ -304,17 +304,17 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
 <div id="exo-res"></div>
 </div>
 
-<!-- ====================== TAB 3 : SR/SC MANO ====================== -->
+<!-- ====================== TAB 3 : SC/SR MANO ====================== -->
 <div class="tab-pane" id="tp3">
 <div class="cd cd-turq"><div class="cd-in">
-  <h2 style="font-size:.95rem;font-weight:800;color:var(--turq);margin-bottom:8px">&#127777; Comprendre SR et SC &mdash; Lecture des manom&egrave;tres</h2>
+  <h2 style="font-size:.95rem;font-weight:800;color:var(--turq);margin-bottom:8px">&#127777; Comprendre SC et SR &mdash; Lecture des manom&egrave;tres</h2>
   <div class="info-box turq"><strong>&Eacute;tape 1 &mdash; Lire les manom&egrave;tres</strong><br>Sur le terrain, on commence TOUJOURS par lire les manom&egrave;tres BP et HP. Ces pressions permettent de d&eacute;terminer <strong>TO</strong> et <strong>TK</strong> gr&acirc;ce &agrave; la correspondance pression/temp&eacute;rature.</div>
   <div class="mano-illust">
     <div class="mano-card bp-card"><h4 style="color:#2563eb">&#10052; Mano BP &mdash; PO</h4><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" id="mano-bp-svg" style="max-width:200px;margin:0 auto;display:block"></svg><div style="margin-top:6px;font-size:.75rem">Lecture PO : <strong style="color:#2563eb" id="mano-bp-val">&mdash;</strong> bar rel<br>&rarr; TO = <strong style="color:var(--turq)" id="mano-bp-to">&mdash;</strong> &deg;C</div></div>
     <div class="mano-card hp-card"><h4 style="color:#e74c3c">&#128293; Mano HP &mdash; PK</h4><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" id="mano-hp-svg" style="max-width:200px;margin:0 auto;display:block"></svg><div style="margin-top:6px;font-size:.75rem">Lecture PK : <strong style="color:#e74c3c" id="mano-hp-val">&mdash;</strong> bar rel<br>&rarr; TK = <strong style="color:var(--orange)" id="mano-hp-tk">&mdash;</strong> &deg;C</div></div>
   </div>
-  <div class="info-box"><strong>&Eacute;tape 2 &mdash; Calculer SR et SC</strong><br><br><strong style="color:#27ae60">&#9632; SR UTILE</strong> = T&deg; sortie &eacute;vaporateur (bulbe) &minus; TO<br><em>&rarr; Ce que l'&eacute;vaporateur ajoute au-del&agrave; du changement d'&eacute;tat</em><br><br><strong style="color:#e8914a">&#9632; SR TOTALE</strong> = T&deg; aspiration compresseur &minus; TO<br><em>&rarr; Inclut le r&eacute;chauffement dans la ligne d'aspiration</em><br><br><strong style="color:#e8914a">&#9632; SR LIGNE</strong> = SR totale &minus; SR utile = T&deg; asp &minus; T&deg; bulbe<br><em>&rarr; R&eacute;chauffement parasite entre &eacute;vaporateur et compresseur</em><br><br><strong style="color:#2563eb">&#9632; SC</strong> = TK &minus; T&deg; sortie condenseur<br><em>&rarr; Refroidissement suppl&eacute;mentaire apr&egrave;s la condensation</em></div>
-  <div class="info-box turq"><strong>&Eacute;tape 3 &mdash; Rep&egrave;res terrain</strong><br><br>&#10004; SR utile : <strong>5 &agrave; 8 K</strong> (r&eacute;gl&eacute;e par le d&eacute;tendeur)<br>&#10004; SR totale : <strong>7 &agrave; 12 K</strong><br>&#9888; SR ligne trop &eacute;lev&eacute;e (&gt;5K) = ligne mal isol&eacute;e<br>&#10004; SC : <strong>3 &agrave; 8 K</strong><br>&#9888; SC trop faible (&lt;2K) = manque de charge probable</div>
+  <div class="info-box"><strong>&Eacute;tape 2 &mdash; Calculer SC et SR</strong><br><br><strong style="color:#27ae60">&#9632; SC UTILE</strong> = T&deg; sortie &eacute;vaporateur (bulbe) &minus; TO<br><em>&rarr; Ce que l'&eacute;vaporateur ajoute au-del&agrave; du changement d'&eacute;tat</em><br><br><strong style="color:#e8914a">&#9632; SC TOTALE</strong> = T&deg; aspiration compresseur &minus; TO<br><em>&rarr; Inclut le r&eacute;chauffement dans la ligne d'aspiration</em><br><br><strong style="color:#e8914a">&#9632; SC LIGNE</strong> = SC totale &minus; SC utile = T&deg; asp &minus; T&deg; bulbe<br><em>&rarr; R&eacute;chauffement parasite entre &eacute;vaporateur et compresseur</em><br><br><strong style="color:#2563eb">&#9632; SR</strong> = TK &minus; T&deg; sortie condenseur<br><em>&rarr; Refroidissement suppl&eacute;mentaire apr&egrave;s la condensation</em></div>
+  <div class="info-box turq"><strong>&Eacute;tape 3 &mdash; Rep&egrave;res terrain</strong><br><br>&#10004; SC utile : <strong>5 &agrave; 8 K</strong> (r&eacute;gl&eacute;e par le d&eacute;tendeur)<br>&#10004; SC totale : <strong>7 &agrave; 12 K</strong><br>&#9888; SC ligne trop &eacute;lev&eacute;e (&gt;5K) = ligne mal isol&eacute;e<br>&#10004; SR : <strong>3 &agrave; 8 K</strong><br>&#9888; SR trop faible (&lt;2K) = manque de charge probable</div>
 </div></div>
 </div>
 
@@ -355,8 +355,8 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
   <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">
     <div class="fg"><label>TO (&deg;C)</label><input type="number" id="cmp-to" step="1" value="-10" inputmode="decimal"><div class="hint">Temp. &eacute;vaporation</div></div>
     <div class="fg"><label>TK (&deg;C)</label><input type="number" id="cmp-tk" step="1" value="40" inputmode="decimal"><div class="hint">Temp. condensation</div></div>
-    <div class="fg"><label>SR (K)</label><input type="number" id="cmp-sr" step="0.5" value="7" inputmode="decimal"><div class="hint">Surchauffe</div></div>
-    <div class="fg"><label>SC (K)</label><input type="number" id="cmp-sc" step="0.5" value="5" inputmode="decimal"><div class="hint">Sous-refroidissement</div></div>
+    <div class="fg"><label>SC (K)</label><input type="number" id="cmp-sr" step="0.5" value="7" inputmode="decimal"><div class="hint">Surchauffe</div></div>
+    <div class="fg"><label>SR (K)</label><input type="number" id="cmp-sc" step="0.5" value="5" inputmode="decimal"><div class="hint">Sous-refroidissement</div></div>
   </div>
   <div class="form-grid" style="grid-template-columns:1fr 1fr">
     <div class="fg"><label>Puiss. frigo souhait&eacute;e (kW)</label><input type="number" id="cmp-qe" step="0.1" value="10" inputmode="decimal"><div class="hint">Pour comparer les d&eacute;bits</div></div>
@@ -642,13 +642,13 @@ function drawCycle(svg,f,cy,opts){
   var cl=['#2563eb','#e74c3c','#e8914a','#2aafaf'],labels=['1 Asp','2 Ref','3 Liq','4 D\u00e9t'];
   p.forEach(function(q,i){var cx2=mX(q.h,v.hm,v.hx),cy2=mY(q.P,v.pm,v.px);svg.append($e('circle',{cx:cx2,cy:cy2,r:12,fill:'#fff',stroke:cl[i],'stroke-width':3.5}));svg.append($e('text',{x:cx2,y:cy2+5,'text-anchor':'middle','font-size':12,'font-weight':800,fill:cl[i]},''+(i+1)));if(opts.annot){var oy=q.P===cy.HP?-22:16;svg.append($e('rect',{x:cx2-35,y:cy2+oy-10,width:70,height:15,rx:4,fill:'#fff',opacity:.88}));svg.append($e('text',{x:cx2,y:cy2+oy+2,'text-anchor':'middle','font-size':10,'font-weight':700,fill:cl[i]},labels[i]+' h='+q.h.toFixed(0)))}});
   if(cy.ptBulbe){var bx=mX(cy.ptBulbe.h,v.hm,v.hx),by=mY(cy.ptBulbe.P,v.pm,v.px);svg.append($e('circle',{cx:bx,cy:by,r:9,fill:'#fff',stroke:'#27ae60','stroke-width':3}));svg.append($e('text',{x:bx,y:by+4,'text-anchor':'middle','font-size':9,'font-weight':800,fill:'#27ae60'},'B'))}
-  if(cy.ptSortCond){var sx2=mX(cy.ptSortCond.h,v.hm,v.hx),sy2=mY(cy.ptSortCond.P,v.pm,v.px);svg.append($e('circle',{cx:sx2,cy:sy2,r:7,fill:'#fff',stroke:'#9b59b6','stroke-width':2.5}));svg.append($e('text',{x:sx2,y:sy2+3,'text-anchor':'middle','font-size':7,'font-weight':800,fill:'#9b59b6'},'SC'))}
+  if(cy.ptSortCond){var sx2=mX(cy.ptSortCond.h,v.hm,v.hx),sy2=mY(cy.ptSortCond.P,v.pm,v.px);svg.append($e('circle',{cx:sx2,cy:sy2,r:7,fill:'#fff',stroke:'#9b59b6','stroke-width':2.5}));svg.append($e('text',{x:sx2,y:sy2+3,'text-anchor':'middle','font-size':7,'font-weight':800,fill:'#9b59b6'},'SR'))}
   if(opts.annot){
     var pt1=p[0],hv1=hvP(f,cy.BP),hl3=hlP(f,cy.HP),yBP=mY(cy.BP,v.pm,v.px),yHP=mY(cy.HP,v.pm,v.px);
     if(pt1.h>hv1){var x1=mX(hv1,v.hm,v.hx),x2c=mX(pt1.h,v.hm,v.hx);
-      if(cy.ptBulbe&&cy.ptBulbe.h>hv1){var xb=mX(cy.ptBulbe.h,v.hm,v.hx);svg.append($e('rect',{x:x1,y:yBP+2,width:xb-x1,height:6,rx:2,fill:'rgba(39,174,96,.25)'}));svg.append($e('line',{x1:x1,y1:yBP+5,x2:xb,y2:yBP+5,stroke:'#27ae60','stroke-width':3}));svg.append($e('text',{x:(x1+xb)/2,y:yBP+20,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#27ae60'},'SR utile'));if(x2c>xb+5){svg.append($e('rect',{x:xb,y:yBP+2,width:x2c-xb,height:6,rx:2,fill:'rgba(232,145,74,.2)'}));svg.append($e('line',{x1:xb,y1:yBP+5,x2:x2c,y2:yBP+5,stroke:'#e8914a','stroke-width':3}));svg.append($e('text',{x:(xb+x2c)/2,y:yBP+32,'text-anchor':'middle','font-size':9,'font-weight':700,fill:'#e8914a'},'SR ligne'))}}
-      else{svg.append($e('rect',{x:x1,y:yBP+2,width:x2c-x1,height:6,rx:2,fill:'rgba(39,174,96,.2)'}));svg.append($e('line',{x1:x1,y1:yBP+5,x2:x2c,y2:yBP+5,stroke:'#27ae60','stroke-width':3}));svg.append($e('text',{x:(x1+x2c)/2,y:yBP+20,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#27ae60'},'SR totale'))}}
-    var ptLiq=p[2];if(ptLiq.h<hl3){var xa=mX(ptLiq.h,v.hm,v.hx),xb2=mX(hl3,v.hm,v.hx);svg.append($e('rect',{x:xa,y:yHP-8,width:xb2-xa,height:6,rx:2,fill:'rgba(37,99,235,.2)'}));svg.append($e('line',{x1:xa,y1:yHP-5,x2:xb2,y2:yHP-5,stroke:'#2563eb','stroke-width':3}));svg.append($e('text',{x:(xa+xb2)/2,y:yHP-14,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#2563eb'},'SC'))}
+      if(cy.ptBulbe&&cy.ptBulbe.h>hv1){var xb=mX(cy.ptBulbe.h,v.hm,v.hx);svg.append($e('rect',{x:x1,y:yBP+2,width:xb-x1,height:6,rx:2,fill:'rgba(39,174,96,.25)'}));svg.append($e('line',{x1:x1,y1:yBP+5,x2:xb,y2:yBP+5,stroke:'#27ae60','stroke-width':3}));svg.append($e('text',{x:(x1+xb)/2,y:yBP+20,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#27ae60'},'SC utile'));if(x2c>xb+5){svg.append($e('rect',{x:xb,y:yBP+2,width:x2c-xb,height:6,rx:2,fill:'rgba(232,145,74,.2)'}));svg.append($e('line',{x1:xb,y1:yBP+5,x2:x2c,y2:yBP+5,stroke:'#e8914a','stroke-width':3}));svg.append($e('text',{x:(xb+x2c)/2,y:yBP+32,'text-anchor':'middle','font-size':9,'font-weight':700,fill:'#e8914a'},'SC ligne'))}}
+      else{svg.append($e('rect',{x:x1,y:yBP+2,width:x2c-x1,height:6,rx:2,fill:'rgba(39,174,96,.2)'}));svg.append($e('line',{x1:x1,y1:yBP+5,x2:x2c,y2:yBP+5,stroke:'#27ae60','stroke-width':3}));svg.append($e('text',{x:(x1+x2c)/2,y:yBP+20,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#27ae60'},'SC totale'))}}
+    var ptLiq=p[2];if(ptLiq.h<hl3){var xa=mX(ptLiq.h,v.hm,v.hx),xb2=mX(hl3,v.hm,v.hx);svg.append($e('rect',{x:xa,y:yHP-8,width:xb2-xa,height:6,rx:2,fill:'rgba(37,99,235,.2)'}));svg.append($e('line',{x1:xa,y1:yHP-5,x2:xb2,y2:yHP-5,stroke:'#2563eb','stroke-width':3}));svg.append($e('text',{x:(xa+xb2)/2,y:yHP-14,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#2563eb'},'SR'))}
     var pt4=p[3];svg.append($e('line',{x1:mX(pt4.h,v.hm,v.hx),y1:yBP+42,x2:mX(pt1.h,v.hm,v.hx),y2:yBP+42,stroke:'#0f2d52','stroke-width':2}));svg.append($e('text',{x:(mX(pt4.h,v.hm,v.hx)+mX(pt1.h,v.hm,v.hx))/2,y:yBP+55,'text-anchor':'middle','font-size':10,'font-weight':800,fill:'#0f2d52'},'q='+(pt1.h-pt4.h).toFixed(0)+' kJ/kg'))
   }
 }
@@ -688,7 +688,7 @@ function tracerCycle(){
   if(Tasp>Tref&&CYCLE_MODE==='terrain')warns.push('T\u00b0asp > T\u00b0ref : incoh\u00e9rence physique');
   if(HP<=BP)warns.push('HP \u2264 BP : incoh\u00e9rence');
   if(warns.length>0)document.getElementById('err-msg').innerHTML='<span style="color:var(--orange)">\u26a0 '+warns.join(' \u00b7 ')+'</span>';
-  /* Pour les zéotropes : SR calculée sur Trosée, SC calculée sur Tbulle */
+  /* Pour les zéotropes : SC calculée sur Trosée, SR calculée sur Tbulle */
   var TOdew=hasGlide(FL)?TdewP(FL,BP):TO;
   var TKbub=hasGlide(FL)?TbubP(FL,HP):TK;
   var SRu=!isNaN(Tbulbe)?Tbulbe-TOdew:null,SRt=Tasp-TOdew,SRl=SRu!==null?SRt-SRu:null,SC=TKbub-Tsortcond;
@@ -706,7 +706,7 @@ function tracerCycle(){
   var gi=document.getElementById('glide-info');
   if(hasGlide(FL)){
     gi.style.display='block';
-    gi.innerHTML='<strong>M\u00e9lange z\u00e9otrope \u2014 glide '+TH[FL].glide.toFixed(1)+' K</strong><br>TO ros\u00e9e = '+TOdew.toFixed(1)+'\u00b0C \u00b7 TO bulle = '+TbubP(FL,BP).toFixed(1)+'\u00b0C \u00b7 TO moy = '+TO.toFixed(1)+'\u00b0C<br>TK bulle = '+TKbub.toFixed(1)+'\u00b0C \u00b7 TK ros\u00e9e = '+TdewP(FL,HP).toFixed(1)+'\u00b0C \u00b7 TK moy = '+TK.toFixed(1)+'\u00b0C<br><em>SR calcul\u00e9e sur T\u00b0ros\u00e9e BP \u00b7 SC calcul\u00e9e sur T\u00b0bulle HP</em>';
+    gi.innerHTML='<strong>M\u00e9lange z\u00e9otrope \u2014 glide '+TH[FL].glide.toFixed(1)+' K</strong><br>TO ros\u00e9e = '+TOdew.toFixed(1)+'\u00b0C \u00b7 TO bulle = '+TbubP(FL,BP).toFixed(1)+'\u00b0C \u00b7 TO moy = '+TO.toFixed(1)+'\u00b0C<br>TK bulle = '+TKbub.toFixed(1)+'\u00b0C \u00b7 TK ros\u00e9e = '+TdewP(FL,HP).toFixed(1)+'\u00b0C \u00b7 TK moy = '+TK.toFixed(1)+'\u00b0C<br><em>SC calcul\u00e9e sur T\u00b0ros\u00e9e BP \u00b7 SR calcul\u00e9e sur T\u00b0bulle HP</em>';
   }else{gi.style.display='none'}
   document.getElementById('k-po').textContent=BP.toFixed(2);document.getElementById('k-pk').textContent=HP.toFixed(2);
   document.getElementById('k-sru').textContent=SRu!==null?SRu.toFixed(1):'\u2014';document.getElementById('kpi-sru').className='kpi'+(SRu===null?'':(SRu<3?' bad':(SRu>10?' warn':' good')));
@@ -887,7 +887,7 @@ function updateMano(por,pkr,TO,TK){
 /* ================================================================
    TOOLTIP / CROSSHAIR
    ================================================================ */
-function setupCH(wId,tId){var w=document.getElementById(wId),t=document.getElementById(tId);w.onmousemove=function(e){var r=w.getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top,svgX=sx*W/r.width,svgY=sy*H/r.height;if(svgX<PD.l||svgX>W-PD.r||svgY<PD.t||svgY>H-PD.b){t.style.display='none';return}var f=wId==='adv-svg-wrap'?ADV_FL:FL;var hV=iX(svgX,VW.hm,VW.hx),pV=iY(svgY,VW.pm,VW.px),Ts=TfP(f,pV),hl2=hlP(f,pV),hv2=hvP(f,pV),zone=hV<hl2?'Liquide':(hV>hv2?'Vapeur SR':'M\u00e9lange L+V');t.innerHTML='h=<b>'+hV.toFixed(1)+'</b> \u00b7 P=<b>'+pV.toFixed(2)+'</b> abs (<b>'+(pV-PATM).toFixed(2)+'</b> rel)<br>T\u00b0sat=<b>'+(isFinite(Ts)?Ts.toFixed(1):'\u2014')+'</b>\u00b0C \u00b7 '+zone;t.style.display='block';t.style.left=Math.min(sx+12,r.width-t.offsetWidth-8)+'px';t.style.top=Math.min(sy-50,r.height-t.offsetHeight-8)+'px'};w.onmouseleave=function(){t.style.display='none'}}
+function setupCH(wId,tId){var w=document.getElementById(wId),t=document.getElementById(tId);w.onmousemove=function(e){var r=w.getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top,svgX=sx*W/r.width,svgY=sy*H/r.height;if(svgX<PD.l||svgX>W-PD.r||svgY<PD.t||svgY>H-PD.b){t.style.display='none';return}var f=wId==='adv-svg-wrap'?ADV_FL:FL;var hV=iX(svgX,VW.hm,VW.hx),pV=iY(svgY,VW.pm,VW.px),Ts=TfP(f,pV),hl2=hlP(f,pV),hv2=hvP(f,pV),zone=hV<hl2?'Liquide':(hV>hv2?'Vapeur SC':'M\u00e9lange L+V');t.innerHTML='h=<b>'+hV.toFixed(1)+'</b> \u00b7 P=<b>'+pV.toFixed(2)+'</b> abs (<b>'+(pV-PATM).toFixed(2)+'</b> rel)<br>T\u00b0sat=<b>'+(isFinite(Ts)?Ts.toFixed(1):'\u2014')+'</b>\u00b0C \u00b7 '+zone;t.style.display='block';t.style.left=Math.min(sx+12,r.width-t.offsetWidth-8)+'px';t.style.top=Math.min(sy-50,r.height-t.offsetHeight-8)+'px'};w.onmouseleave=function(){t.style.display='none'}}
 
 /* ================================================================
    EXERCICE (Tab 2)
